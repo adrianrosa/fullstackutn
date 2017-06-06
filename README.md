@@ -1,32 +1,36 @@
-# Mongo, API y React App
+Project of course: Fullstack UTN http://www.lslutnfra.com/curso-fullstack
+API books (Node JS, Mongo) + IU React JS.
+Running on Docker containers. 
 
-Gracias a __docker-compose__ podemos definir una serie de contenedores a ser levantados. Docker-compose también nos permite establecer una serie de reglas para que nuestros contenedores se levanten en el orden correcto y cumpliendo las condiciones necesarias para que todo funcione.
+# Mongo, API and React App
 
-## Modo de uso (usando docker)
+With __docker-compose__ we can define rules to run the containers in the correct order and with certain conditions necessary for everything to work.
 
-### Instalar docker-compose
+## How to use (using docker)
+
+### Install docker-compose
 ```bash
 sudo bash install-docker-compose.sh
 ```
 
-### Levantar contenedores
+### Up containers
 ```bash
 docker-compose up -d
 ```
 
-## A tener en cuenta
+## Warning
 
-LOS PUERTOS __3000__, __3500__ Y __27017__ deben estar disponibles.
+The ports __3000__, __3500__ Y __27017__ must be available..
 
-## Modo de uso (SIN docker)
+## How to use (using without docker)
 
-* Instalar mongo
+* Install mongo
 
-* Instalar nodejs v 6.10
+* Install nodejs v 6.10
 
-* Editar el archivo __/etc/hosts__ y agregar la siguiente línea __127.0.0.1	fullproject_mongodb_1__
+* Edit file __/etc/hosts__  add the follow line: __127.0.0.1	fullproject_mongodb_1__
 
-* Correr API __npm start__
+* In the API folder run the command __npm start__
 
-* Correr APP __npm start__
+* In the APP folder run the command __npm start__
 
