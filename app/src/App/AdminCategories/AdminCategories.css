@@ -1,0 +1,22 @@
+.AdminCategories-mainAction {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-content: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.action-success label{
+  color: #3c763d;
+  font-weight: bold;
+}
+
+.action-failure label{
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.error-message{
+  color: #ff0000;
+}
