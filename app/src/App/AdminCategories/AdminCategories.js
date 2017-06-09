@@ -63,7 +63,9 @@ class AdminCategories extends Component {
       });
   }
 
-  removeCategory(category) {}
+  removeCategory(category) {
+    
+  }
 
   updateCategory(category) {
     this.setState(prevState => ({
@@ -138,7 +140,7 @@ class AdminCategories extends Component {
 
           {status === 'failure' && <div>Error: {error} </div>}
 
-          {status === 'success' && <CategoriesList items={categories} onEdit={category => this.updateCategory(category)} />}
+          {status === 'success' && <CategoriesList items={categories} onEdit={category => this.updateCategory(category)} onDelete={category => this.removeCategory(category)} />}
         </Row>
 
         <CategoryModal onCancel={() => this.hideModal()} show={showModal} category={selected} onError={err => this.handleError(err)} onSave={(categorySaved, isUpdate) => this.handleSaveCategory(categorySaved, isUpdate)} />
