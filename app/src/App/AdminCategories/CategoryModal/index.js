@@ -68,7 +68,7 @@ class CategoryModal extends Component {
     })
     .catch(err => {
       //console.log(err.message);
-      this.props.onError(new Error("Ocurrió un error al guardar categoría"));
+      this.props.onError(new Error("Error happened on save category"));
     });
    }
 
@@ -93,7 +93,7 @@ class CategoryModal extends Component {
     })
     .catch(err => {
       //console.log(err);
-      this.props.onError(new Error("Ocurrió un error al guardar categoría"));
+      this.props.onError(new Error("Error happened on update category"));
     });
    }
 

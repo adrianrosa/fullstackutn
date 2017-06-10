@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col, PageHeader, Button } from 'react-bootstrap';
 import CategoryModal from './CategoryModal';
 import CategoriesList from './CategoriesList';
+import CategoryDelete from './CategoryModal/delete';
 import './AdminCategories.css';
 
 class AdminCategories extends Component {
@@ -13,6 +14,7 @@ class AdminCategories extends Component {
       status: 'init',
       error: null,
       showModal: false,
+      showDelete: false,
       selected: undefined,
       action: null
     };
@@ -36,6 +38,19 @@ class AdminCategories extends Component {
         categories: categoriesList,
         showModal: false,
         action: isUpdate ? 'updated' : 'added'
+      }));
+  }
+
+  handleDeleteCategory(categoryDeleted){
+
+    const categoriesList = this.state.categories.filter(c => c.id !== categoryDeleted.id);
+    
+    this.setState(prevState =>({
+        ...prevState,
+        status: 'success',
+        categories: categoriesList,
+        showDelete: false,
+        action: 'deleted'
       }));
   }
 
@@ -64,7 +79,11 @@ class AdminCategories extends Component {
   }
 
   removeCategory(category) {
-    
+    this.setState(prevState => ({
+      ...prevState,
+      showDelete: true,
+      selected: category
+    }));
   }
 
   updateCategory(category) {
@@ -87,6 +106,7 @@ class AdminCategories extends Component {
     this.setState(prevState => ({
       ...prevState,
       showModal: false,
+      showDelete: false,
       selected: undefined
     }));
   }
@@ -102,7 +122,7 @@ class AdminCategories extends Component {
   }
 
   render() {
-    const { categories, status, error, showModal, selected, action } = this.state;
+    const { categories, status, error, showModal, showDelete, selected, action } = this.state;
 
     return (
       <Grid>
@@ -144,6 +164,7 @@ class AdminCategories extends Component {
         </Row>
 
         <CategoryModal onCancel={() => this.hideModal()} show={showModal} category={selected} onError={err => this.handleError(err)} onSave={(categorySaved, isUpdate) => this.handleSaveCategory(categorySaved, isUpdate)} />
+        <CategoryDelete onCancel={() => this.hideModal()} show={showDelete} category={selected} onError={err => this.handleError(err)} onDelete={(categoryDeleted) => this.handleDeleteCategory(categoryDeleted)}></CategoryDelete>
       </Grid>
     );
   }
