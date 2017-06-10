@@ -13,18 +13,11 @@ class CategoryDelete extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    if(nextProps.category){
-      this.setState(prevState => ({
+
+    this.setState(prevState => ({
         ...prevState,
-        category: nextProps.category
-      }));
-    }
-    else{
-      this.setState(prevState => ({
-        ...prevState,
-        category: null
-      }));
-    }
+        category: nextProps.category ?  nextProps.category : null
+    }));
   }
 
   delete(category) {
