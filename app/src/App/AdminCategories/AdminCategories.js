@@ -141,13 +141,13 @@ class AdminCategories extends Component {
         <Row>
           <Col md={12}>
             {action === 'added' && <div className="action-success">
-                                      <label>Categoría agregada satisfactoriamente</label>
+                                      <label>Category added successfully</label>
                                     </div>}
             {action === 'updated' && <div className="action-success">
-                                      <label>Categoría modificada satisfactoriamente</label>
+                                      <label>Category modified successfully</label>
                                     </div>}
             {action === 'deleted' && <div className="action-success">
-                                      <label>Categoría eliminada satisfactoriamente</label>
+                                      <label>Category removed successfully</label>
                                     </div>}
             {action === 'error' && <div className="action-failure">
                                       <label>{error}</label>

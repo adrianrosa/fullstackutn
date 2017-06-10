@@ -51,7 +51,7 @@ class CategoryDelete extends Component {
         <Modal.Body>
           <form>
             <FormGroup controlId="categoryForm">
-              <ControlLabel>Are you sure want to delete the {category && category.label} category ?</ControlLabel>
+              <ControlLabel>Are you sure want to remove the {category && category.label} category ?</ControlLabel>
             </FormGroup>
           </form>
         </Modal.Body>
